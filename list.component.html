@@ -1,0 +1,13 @@
+<h2>My Insights</h2>
+<ul class="heroes">
+  <li *ngFor="let s of sample">
+    <button [class.selected]="s===selectedInfo" type="button" (click)="onSelect(s)">
+      <span class="name">{{s.name}}</span>
+    </button>
+  </li>
+</ul>
+
+<div *ngIf="selectedInfo">
+    <h2 class="sample">{{selectedInfo.name | uppercase}}</h2>
+    <p>{{selectedInfo.desc}}</p>
+</div>

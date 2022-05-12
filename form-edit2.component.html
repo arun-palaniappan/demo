@@ -1,0 +1,200 @@
+<h4>Speak with a Fiduciary Trust International Advisor</h4>
+<form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+    <br />
+    <div class="row g-1">
+        <div class="col-md-2">
+        <label>First Name </label>
+        </div>
+        <div class="col-md-2">
+        <input type="text" name="firstname" class="form-control"  [(ngModel)]="mod.firstname"  
+        #firstname="ngModel" [ngClass]="{'is-invalid' : f.submitted && firstname.invalid}" required>
+        <div *ngIf="f.submitted && firstname.invalid" class="alert alert-danger">
+            <div *ngIf="firstname.errors.required">This Field is required</div>
+        </div>
+        </div>
+    </div>
+    <br />
+    <div class="row g-1">
+        <div class="col-md-2">
+        <label>Last Name </label>
+        </div>
+        <div class="col-md-2">
+        <input type="text" name="lastname" class="form-control"  [(ngModel)]="mod.lastname"  
+        #lastname="ngModel" [ngClass]="{'is-invalid' : f.submitted && lastname.invalid}" required>
+        <div *ngIf="f.submitted && lastname.invalid" class="alert alert-danger">
+            <div *ngIf="lastname.errors.required">This Field is required</div>
+        </div>
+        </div>
+    </div>
+    <br />
+    <div class="row g-1">
+        <div class="col-md-2">
+        <label>Email Address </label>
+        </div>
+        <div class="col-md-2">
+        <input type="text" name="email" class="form-control"  [(ngModel)]="mod.email"  
+        #email="ngModel" [ngClass]="{'is-invalid' : f.submitted && email.invalid}" required email>
+        <div *ngIf="f.submitted && email.invalid" class="alert alert-danger">
+            <div *ngIf="email.errors.required">This Field is required</div>
+            <div *ngIf="email.errors.email">This field is Invalid</div>
+        </div>
+        </div>
+    </div>
+    <br />
+    <div class="row g-1">
+        <div class="col-md-2">
+        <label>Phone Number </label>
+        </div>
+        <div class="col-md-2">
+        <input type="number" name="phone" class="form-control"  [(ngModel)]="mod.phone"  
+        #phone="ngModel" [ngClass]="{'is-invalid' : f.submitted && phone.invalid}" required minlength="10" maxlength="10">
+        <div *ngIf="f.submitted && phone.invalid" class="alert alert-danger">
+            <div *ngIf="phone.errors.required">This Field is required</div>
+            <div *ngIf="phone.errors.minlength || phone.errors.maxlength">This field should have 10 digits</div>
+        </div>
+        </div>
+    </div>
+    <br />
+    <div class="card" style="width: 30rem;">
+        <div class="card-body">
+            <div class="row g-1">
+                <div class="col-md-6">
+                <label class="form-check-label" for="financial-planning">
+                    Financial Planning
+                </label>
+                </div>
+                <div class="col-md-6">
+                <input class="form-check-input" type="checkbox" value="Financial Planning" id="financial-planning"  
+                [(ngModel)]="mod.financialPlanning" #financialPlanning="ngModel" name="financialPlanning">
+                </div>
+            </div>
+            <br />
+            <div class="row g-1">
+                <div class="col-md-6">
+                <label class="form-check-label" for="trust-and-estate-planning">
+                    Trust and Estate Planning
+                </label>
+                </div>
+                <div class="col-md-6">
+                <input class="form-check-input" type="checkbox" value="Trust and Estate Planning" id="trust-and-estate-planning" 
+                [(ngModel)]="mod.trustandEstatePlanning" #trustandEstatePlanning="ngModel" name="trustandEstatePlanning">
+                </div>
+            </div>
+            <br />
+            <div class="row g-1">
+                <div class="col-md-6">
+                    <label class="form-check-label" for="investment-management">
+                        Investment Management
+                    </label>
+                    </div>
+                    <div class="col-md-6">
+                    <input class="form-check-input" type="checkbox" value="Investment Management" id="investment-management" 
+                    [(ngModel)]="mod.investmentManagement" #investmentManagement="ngModel" name="investmentManagement">
+                    </div>
+            </div>
+            <br />
+            <div class="row g-1">
+                <div class="col-md-6">
+                    <label class="form-check-label" for="tax-strategies">
+                        Tax Strategies
+                    </label>
+                    </div>
+                    <div class="col-md-6">
+                    <input class="form-check-input" type="checkbox" value="Tax Strategies" id="tax-strategies" 
+                    [(ngModel)]="mod.taxStrategies" #taxStrategies="ngModel" name="taxStrategies">
+                    </div>
+            </div>
+            <br />
+            <div class="row g-1">
+                <div class="col-md-6">
+                    <label class="form-check-label" for="charitable-giving">
+                        Charitable Giving
+                    </label>
+                    </div>
+                    <div class="col-md-6">
+                    <input class="form-check-input" type="checkbox" value="Charitable Giving" id="charitable-giving" 
+                    [(ngModel)]="mod.charitableGiving" #charitableGiving="ngModel" name="charitableGiving">
+                    </div>
+            </div>
+            <br />
+            <div class="row g-1">
+                <div class="col-md-6">
+                    <label class="form-check-label" for="sustainable-investing">
+                        Sustainable Investing
+                    </label>
+                    </div>
+                    <div class="col-md-6">
+                    <input class="form-check-input" type="checkbox" value="Sustainable Investing" id="sustainable-investing" 
+                    [(ngModel)]="mod.sustainableInvesting" #sustainableInvesting="ngModel" name="sustainableInvesting">
+                    </div>
+            </div>
+            <br />
+            <div class="row g-1">
+                <div class="col-md-6">
+                    <label class="form-check-label" for="custody-services">
+                        Custody Services
+                    </label>
+                    </div>
+                    <div class="col-md-6">
+                    <input class="form-check-input" type="checkbox" value="custody Services" id="custody-services" 
+                    [(ngModel)]="mod.custodyServices" #custodyServices="ngModel" name="custodyServices">
+                    </div>
+            </div>
+            <br />
+        </div>
+      </div>
+    <br />
+    <div class="row g-1">
+        <div class="col-md-2">
+        Investable Assets
+        </div>
+        <div class="col-md-2">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="asset" id="asset1" value="Less Than $5 Million" 
+                [(ngModel)]="mod.asset" #asset="ngModel" name="asset">
+                <label class="form-check-label" for="Asset1">
+                  Less Than $5 Million
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="asset" id="asset2" value="$5-$20 Million Dollar" 
+                [(ngModel)]="mod.asset" #asset="ngModel" name="asset">
+                <label class="form-check-label" for="Asset2">
+                  $5-$20 Million Dollar
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="asset" value="Over $20 Million" id="asset3" 
+                [(ngModel)]="mod.asset" #asset="ngModel" name="asset">
+                <label class="form-check-label" for="Asset3">
+                  Over $20 Million
+                </label>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row g-1">
+        <div class="col-md-2">
+            Are you a current Fiduciary Trust International client?
+        </div>
+        <div class="col-md-2">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="member" id="y" value="Yes" 
+                [(ngModel)]="mod.member" #member="ngModel" name="member" [ngClass]="{'is-invalid' : f.submitted && member.invalid}" required>
+                <label class="form-check-label" for="y">
+                  Yes
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="member" id="n" value="No" 
+                [(ngModel)]="mod.member" #member="ngModel" name="member" [ngClass]="{'is-invalid' : f.submitted && member.invalid}" required>
+                <label class="form-check-label" for="n">
+                  No
+                </label>
+            </div>
+        </div>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-danger">Submit</button>
+    <br />
+</form>
